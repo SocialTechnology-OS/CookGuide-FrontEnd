@@ -11,21 +11,6 @@ footer {
     align-items: center;
 }
 
-.social-icons {
-    margin-right: 20px;
-}
-
-.social-icons a {
-    display: inline-block;
-    margin-right: 10px;
-    text-decoration: none;
-}
-
-.social-icons img {
-    width: 30px; /* Ajusta el tamaño de los iconos según tus preferencias */
-    height: 30px;
-}
-
 .copyright {
     font-size: 14px; /* Tamaño de fuente para el copyright */
 }
