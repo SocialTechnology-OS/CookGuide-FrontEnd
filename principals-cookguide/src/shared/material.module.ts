@@ -36,7 +36,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatPaginatorModule,
     MatFormFieldModule,
     MatChipsModule,
-    MatGridListModule
+    MatGridListModule,
      ]
     })
     export class MaterialModule{ }
