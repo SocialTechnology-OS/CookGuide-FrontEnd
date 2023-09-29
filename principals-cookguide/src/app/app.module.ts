@@ -10,12 +10,19 @@ import { MaterialModule } from '../shared/material.module';
 import { RouterModule } from '@angular/router';
 import { FrontCardsComponent } from './front/components/front-cards/front-cards.component';
 import {HttpClientModule} from '@angular/common/http';
+import { SidenavComponent } from './public/components/sidenav/sidenav.component';
+import { DashboardComponent } from './public/components/dashboard/dashboard.component';
+import { BodyComponent } from './public/components/body/body.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,  
-    FooterComponent, FrontCardsComponent
+    FooterComponent, 
+    FrontCardsComponent, 
+    SidenavComponent, 
+    DashboardComponent, 
+    BodyComponent
   ],
   imports: [
     BrowserModule,
