@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { FrontCardsComponent } from './front/components/front-cards/front-cards.component';
 
 const routes: Routes = [
-  {path:'home', component: FrontCardsComponent},
-  {path:'', pathMatch: 'full', redirectTo: '/home'},
-  {path: '**', redirectTo: '/home', pathMatch: 'full'}
+  {path:'recipes', component: FrontCardsComponent},
+  {path:'', pathMatch: 'full', redirectTo: '/recipes'},
+  {path: '**', redirectTo: '/recipes', pathMatch: 'full'}
 ];
 
 @NgModule({
