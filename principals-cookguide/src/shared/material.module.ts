@@ -10,6 +10,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
     imports: [
@@ -23,7 +26,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatPaginatorModule,
     MatFormFieldModule,
     MatChipsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule,
+    MatSnackBarModule
      ],
     exports: [
     BrowserAnimationsModule,
@@ -37,6 +42,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatFormFieldModule,
     MatChipsModule,
     MatGridListModule,
+    MatDialogModule,
+    MatSnackBarModule
      ]
     })
     export class MaterialModule{ }
