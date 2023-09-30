@@ -1,3 +1,4 @@
+
 {
   "recipes": [
     {
@@ -6,12 +7,14 @@
       "author": "3",
       "image": "https://www.laespanolaaceites.com/wp-content/uploads/2019/05/espaguetis-a-la-bolonesa-1080x671.jpg",
       "ingredients": [
+        
         "300g de carne molida de res",
         "1 cebolla picada",
         "2 dientes de ajo picados",
         "400g de salsa de tomate",
         "200g de spaghetti",
         "Sal y pimienta al gusto"
+        
       ],
       "preparation": "En una sartén, dorar la carne molida con la cebolla y el ajo. Agregar la salsa de tomate y cocinar a fuego lento durante 20 minutos. Cocinar los spaghetti en agua hirviendo hasta que estén al dente. Servir la salsa sobre los spaghetti cocidos.",
       "time": "45 minutos",
