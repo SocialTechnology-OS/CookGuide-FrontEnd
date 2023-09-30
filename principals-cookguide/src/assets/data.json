@@ -52,23 +52,6 @@
       "servings": "6"
     },
     {
-      "id": 4,
-      "name": "Pizza Margarita",
-      "author": "5",
-      "image": "https://www.annarecetasfaciles.com/files/pizza-margarita-1-scaled.jpg",
-      "ingredients": [
-        "Masa de pizza",
-        "Tomates cherry",
-        "Mozzarella fresca",
-        "Albahaca fresca",
-        "Aceite de oliva",
-        "Sal y pimienta al gusto"
-      ],
-      "preparation": "Extender la masa de pizza en un molde. Colocar rodajas de mozzarella y tomates cherry cortados por la mitad. Hornear a 220°C durante 15-20 minutos o hasta que la masa esté dorada. Agregar albahaca fresca, aceite de oliva, sal y pimienta al gusto antes de servir.",
-      "time": "30 minutos",
-      "servings": "4"
-    },
-    {
       "id": 5,
       "name": "Sushi de salmón",
       "author": "3",

@@ -57,7 +57,4 @@ export class ManageRecipesComponent {
     })
   }
 
-
-
-
 }

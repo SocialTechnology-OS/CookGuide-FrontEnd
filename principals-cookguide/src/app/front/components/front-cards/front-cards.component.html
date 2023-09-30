@@ -1,25 +1,23 @@
 <div class="container responsive-grid">
  <mat-card class="recipecards" *ngFor="let card of recipesCards">
-    <!-- IMAGEN -->
-    <img class="imgcards" mat-card-image [src]="card.image" loading="lazy" />
-
+    
     <!-- TITULO -->
     <mat-card-header>
       <mat-card-title>{{ card.name }} </mat-card-title>
     </mat-card-header>
+    <br>
+    <!-- IMAGEN -->
+    <img class="imgcards" mat-card-image [src]="card.image" loading="lazy" />
+
 
     <mat-card-content>
       <br />
       
       <p>
-        <b>Ingredientes:</b> <br>
-        {{ card.ingredients }}
+        <b>Tiempo de Preparacion: </b>
+        {{ card.time }}
       </p>
 
-      <p class="align-center">
-        <b>Preparacion:</b> <br>
-        {{ card.preparation }}
-      </p>
     </mat-card-content>
 
     <mat-card-actions class="actions-container">
