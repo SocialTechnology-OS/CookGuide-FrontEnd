@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class RecipeService {
+export class RecipeService { 
 
   constructor(private http: HttpClient) {}
 
