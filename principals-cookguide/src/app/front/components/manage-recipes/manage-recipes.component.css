@@ -29,7 +29,6 @@
   .add-recipe{
     margin: 10px 10px;
     border-radius: 10px;
-    border-color: #E06B43;
-    background-color: #FFE9C9;
+    background-color: transparent;
     
   }

@@ -11,9 +11,8 @@ import { FormCreateRecipesComponent } from '../form-create-recipes/form-create-r
 })
 export class ManageRecipesComponent {
   constructor(private recipesService: RecipeService, public dialog: MatDialog,) {
-      //se inicializa una suscripción para el observable peliculaCreated$ (para detectar la creación de películas)
       this.recipesService.recipeChanged$.subscribe(() => {
-        this.getRecipesByAuthor(this.authorId); //actualiza la lista de películas cuando se crea una nueva película
+        this.getRecipesByAuthor(this.authorId);
       });
   }
 
@@ -44,6 +43,10 @@ export class ManageRecipesComponent {
   }
 
   deleteRecipe(id: number) {
+    const confirmDelete = confirm('¿Está seguro de eliminar esta receta?');
+    if (!confirmDelete) {
+      return;
+    }
     this.recipesService.deleteRecipe(id).subscribe(response => {
       console.log(response);
       this.getRecipesByAuthor(this.authorId);
@@ -56,8 +59,5 @@ export class ManageRecipesComponent {
       this.getRecipesByAuthor(this.authorId);
     })
   }
-
-
-
 
 }

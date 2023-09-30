@@ -1,6 +1,8 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
     <div class="logo-container">
-        <button class="logo" (click)="toggleCollapse()">CG</button>
+        <button class="logo" (click)="toggleCollapse()">
+            <img height="50px" src="https://media.discordapp.net/attachments/1150112902737580138/1157540063660490804/WhatsApp_Image_2023-09-29_at_11.38.38_PM.jpeg?ex=6518fab1&is=6517a931&hm=ac44abfe2ab1ea45beb69daf8a017dae3b360fe9f6f02fb6850b148a18795321&=&width=627&height=662" alt="">
+        </button>
         <div class="logo-text" *ngIf="collapsed">Cookguide</div>
         <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
             <i class="fal fa-times close-icon"></i>
