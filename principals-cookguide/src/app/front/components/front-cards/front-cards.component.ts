@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { RecipeService } from 'src/app/services/recipe.service';
+import { RecipeService } from 'src/app/services/recipe-service/recipe.service';
 import { recipeCard } from 'src/app/models/card.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-front-cards',
@@ -9,7 +10,7 @@ import { recipeCard } from 'src/app/models/card.model';
 })
 export class FrontCardsComponent {
 
-  constructor(private recipesService: RecipeService,) {}
+  constructor(private recipesService: RecipeService, private router: Router) {}
 
   recipesCards: recipeCard[] = [];
 
@@ -22,5 +23,9 @@ export class FrontCardsComponent {
 
   ngOnInit(): void {
     this.getlistrecipes();
+  }
+
+  ViewDetails(recipe: recipeCard) {
+    this.router.navigate(['/recipes', recipe.id]);
   }
 }

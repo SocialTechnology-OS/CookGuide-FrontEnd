@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { RecipeService } from 'src/app/services/recipe.service';
+import { RecipeService } from 'src/app/services/recipe-service/recipe.service';
 
 @Component({
   selector: 'app-form-create-recipes',
