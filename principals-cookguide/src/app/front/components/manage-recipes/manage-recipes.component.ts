@@ -3,6 +3,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
 import { recipeCard } from 'src/app/models/card.model';
 import { MatDialog } from '@angular/material/dialog';
 import { FormCreateRecipesComponent } from '../form-create-recipes/form-create-recipes.component';
+import { FromUpdateRecipesComponent } from '../from-update-recipes/from-update-recipes.component';
 
 @Component({
   selector: 'app-manage-recipes',
@@ -40,6 +41,12 @@ export class ManageRecipesComponent {
 
   openDialog(): void {
     this.dialog.open(FormCreateRecipesComponent);
+  }
+
+  openDialogUpdate(recipe: recipeCard): void {
+    this.dialog.open(FromUpdateRecipesComponent, {
+      data: recipe
+    });
   }
 
   deleteRecipe(id: number) {
