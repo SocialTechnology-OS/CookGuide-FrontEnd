@@ -41,7 +41,9 @@ export class RecipeService {
 
   updateRecipe(recipe: recipeCard) {
     return this.http
-      .put(`${environment.baseURL}/recipes/${recipe.id}`, recipe)
+      .put(`${environment.baseURL}/recipes/${recipe.id}`, recipe).pipe(tap(() => {
+        this.onRecipeChanged(); 
+      }))
   }
 
   deleteRecipe(id: number) {
