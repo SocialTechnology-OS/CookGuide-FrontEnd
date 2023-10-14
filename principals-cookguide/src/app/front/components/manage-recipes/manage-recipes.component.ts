@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RecipeService } from 'src/app/services/recipe.service';
+import { RecipeService } from 'src/app/services/recipe-service/recipe.service';
 import { recipeCard } from 'src/app/models/card.model';
 import { MatDialog } from '@angular/material/dialog';
 import { FormCreateRecipesComponent } from '../form-create-recipes/form-create-recipes.component';

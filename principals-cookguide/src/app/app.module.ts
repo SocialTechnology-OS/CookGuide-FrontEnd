@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SidenavComponent } from './public/components/sidenav/sidenav.component';
 import { BodyComponent } from './public/components/body/body.component';
 import { FromUpdateRecipesComponent } from './front/components/from-update-recipes/from-update-recipes.component';
+import { RecipesDetailsComponent } from './front/components/recipes-details/recipes-details.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FromUpdateRecipesComponent } from './front/components/from-update-recip
     ManageRecipesComponent,
     FormCreateRecipesComponent,
     FromUpdateRecipesComponent,
+    RecipesDetailsComponent,
 
   ],
   imports: [

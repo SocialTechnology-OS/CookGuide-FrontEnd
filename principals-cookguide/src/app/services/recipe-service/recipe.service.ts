@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-import { recipeCard } from '../models/card.model';
+import { environment } from '../../../environments/environment';
+import { recipeCard } from '../../models/card.model';
 import { tap } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
@@ -27,9 +27,10 @@ export class RecipeService {
       .get<recipeCard[]>(`${environment.baseURL}/recipes`)
   }
   
-  getRecipe(authorId: string) {
+  
+  getRecipeById(id: number) {
     return this.http
-      .get<recipeCard>(`${environment.baseURL}/recipes/${authorId}`)
+      .get<recipeCard>(`${environment.baseURL}/recipes/${id}`)
   }
 
   createRecipe(recipe: recipeCard) {

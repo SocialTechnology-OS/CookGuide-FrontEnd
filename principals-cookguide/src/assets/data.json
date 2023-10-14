@@ -241,7 +241,7 @@
       "weight": "55"
     },
     {
-      "id": "3",
+      "id": 3,
       "type": "chef",
       "email": "jsmith@example.com",
       "user": "jsmith",

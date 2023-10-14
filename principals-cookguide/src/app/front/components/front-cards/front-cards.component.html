@@ -21,7 +21,7 @@
     </mat-card-content>
 
     <mat-card-actions class="actions-container">
-      <button mat-raised-button class="button-purple" [routerLink]="'/recipes/' + card.id" >Ver detalle</button>
+      <button mat-raised-button class="button-purple" (click)="ViewDetails(card)" >Ver detalle</button>
     </mat-card-actions>
     <br />
   </mat-card>
