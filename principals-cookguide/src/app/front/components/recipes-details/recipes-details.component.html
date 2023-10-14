@@ -4,18 +4,21 @@
             <h2>{{ recipe.name }}</h2>
             <mat-icon>more_vert</mat-icon>
         </div>
-        <p> {{getAuthorFullName(recipe.author)}}  </p>
-        <div>
-            <img class="imgcards" mat-card-image [src]="recipe.image" loading="lazy" />
+        <h3> Autor: {{getAuthorFullName(recipe.author)}}  </h3>
+        <div class="recipe-content">
+          <div>
+            <img class="recipe-img" mat-card-image [src]="recipe.image" loading="lazy" />
             <p>Tiempo de preparacion: {{ recipe.time }}</p>
             <p>Porciones: {{ recipe.servings }} personas</p>
-        </div>
-        <div>
+          </div>
+          <div class="recipe-extension">
+            <b>Ingredientes:</b>
             <ul>
-                <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+              <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
             </ul>
             <br>
-            <p>Preparacion: <br>{{ recipe.preparation }}</p>
+            <b>Preparacion:</b> <br> <p>{{ recipe.preparation }}</p>
+          </div>
         </div>
     </div>
 </div>

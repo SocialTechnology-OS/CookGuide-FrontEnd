@@ -25,6 +25,7 @@ export class FormCreateRecipesComponent {
     this.form = this.fb.group(
       {
         name: ['', Validators.required],
+        image: ['', Validators.required],
         ingredients: ['', Validators.required],
         preparation: ['', Validators.required],
         time: ['', Validators.required],
@@ -40,7 +41,7 @@ export class FormCreateRecipesComponent {
         id: 0,
         name: this.form.value.name,
         author: '5',
-        image: "asdyuigbsf",
+        image: this.form.value.image,
         ingredients: this.form.value.ingredients.split(','),
         preparation: this.form.value.preparation,
         time: this.form.value.time,

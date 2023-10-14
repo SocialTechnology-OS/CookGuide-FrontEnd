@@ -4,7 +4,7 @@
     <mat-dialog-content>
       <!-- DESCRIPCION -->
       <p>Ingresa los nuevos datos de tu nueva receta</p>
-  
+
       <form [formGroup]="form" class="form-container-creation">
 
         <mat-form-field appearance="fill">
@@ -13,7 +13,14 @@
           <input matInput required formControlName="name" />
           <mat-error>El nombre de la receta es necesario</mat-error>
         </mat-form-field>
-  
+
+        <mat-form-field appearance="fill">
+          <mat-label>Link de la imagen</mat-label>
+          <mat-icon matPrefix>link</mat-icon>
+          <input matInput required formControlName="image" />
+          <mat-error>La foto de la receta es necesaria</mat-error>
+        </mat-form-field>
+
         <mat-form-field appearance="fill">
           <mat-label>Preparacion</mat-label>
           <mat-icon matPrefix>edit_note</mat-icon>
@@ -42,11 +49,11 @@
             <input matInput required type="number" formControlName="servings" />
             <mat-error>Ingrese una porcion válida</mat-error>
           </mat-form-field>
-  
+
         </div>
-  
+
         <br/>
-  
+
         <div class="buttons-container">
           <button mat-stroked-button color="primary" (click)="dialogRef.close(false)">
             Cancelar
@@ -55,7 +62,7 @@
             Actualizar
           </button>
         </div>
-  
+
         <br/>
       </form>
     </mat-dialog-content>
