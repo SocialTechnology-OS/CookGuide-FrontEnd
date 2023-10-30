@@ -326,6 +326,24 @@
       ],
       "height": "1.78",
       "weight": "75"
+    },
+    {
+      "id": "74754296",
+      "type": "estudiante",
+      "email": "liamramosvicente@gmail.com",
+      "user": "username",
+      "password": "aaaaaaaaaaaaaa",
+      "name": "William",
+      "lastname": "Ramos",
+      "picture": "link",
+      "birthday": "2004-06-02T05:00:00.000Z",
+      "gender": "masculino",
+      "diet": "hola",
+      "allergies": "hola",
+      "preferences": "hola",
+      "needs": "hola",
+      "height": "hola",
+      "weight": "hola"
     }
   ]
 }
