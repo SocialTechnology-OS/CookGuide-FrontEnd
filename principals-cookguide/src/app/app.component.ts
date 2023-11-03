@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface SideNavToogle{
   screenWidth: number;
@@ -11,7 +12,9 @@ interface SideNavToogle{
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private router: Router){}
   title = 'principals-cookguide';
+  
 
   isSideNavCollapsed = false;
   screenWidth = 0;
@@ -20,4 +23,12 @@ export class AppComponent {
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
   }
+
+  getMoment(){
+    if (this.router.url === '/login' || this.router.url === '/register'){
+      return true;
+    } else {
+      return false;
+  }
+}
 }
