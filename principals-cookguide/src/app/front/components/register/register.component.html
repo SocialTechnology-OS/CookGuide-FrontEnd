@@ -1,40 +1,40 @@
 <main class="register">
-  <div class="w-full max-w-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-    <div class="bg-white shadow-md rounded px-8 py-8 flex flex-col space-y-2">
-      <div class="grid place-items-center space-y-4">
-        <a [routerLink]="['/register']"><img class="h-8" src="https://media.discordapp.net/attachments/1150112902737580138/1157540063660490804/WhatsApp_Image_2023-09-29_at_11.38.38_PM.jpeg?ex=6518fab1&is=6517a931&hm=ac44abfe2ab1ea45beb69daf8a017dae3b360fe9f6f02fb6850b148a18795321&=&width=627&height=662" alt="Cookguide Logo"></a>
-        <h1 class="text-black font-medium text-3xl">
+  <div>
+    <div>
+      <div>
+        <a [routerLink]="['/register']"><img class="" src="https://media.discordapp.net/attachments/1150112902737580138/1157540063660490804/WhatsApp_Image_2023-09-29_at_11.38.38_PM.jpeg?ex=6518fab1&is=6517a931&hm=ac44abfe2ab1ea45beb69daf8a017dae3b360fe9f6f02fb6850b148a18795321&=&width=627&height=662" alt="Cookguide Logo"></a>
+        <h1>
           Registro
         </h1>
       </div>
-      <form class="mt-4"
+      <form class=""
             [formGroup]="form1">
         <mat-tab-group (selectedTabChange)="onTabChange($event)">
           <mat-tab label="Soy Estudiante"></mat-tab>
           <mat-tab label="Soy Chef"></mat-tab>
         </mat-tab-group>
-        <div class="flex grid-cols-2 space-x-4">
-          <mat-form-field appearance="fill" class="w-full">
+        <div class="">
+          <mat-form-field appearance="fill">
             <mat-label>
               Nombre
             </mat-label>
             <input matInput required formControlName="name" />
           </mat-form-field>
-          <mat-form-field appearance="fill" class="w-full">
+          <mat-form-field appearance="fill">
             <mat-label>
               Apellido
             </mat-label>
             <input matInput required formControlName="lastname" />
           </mat-form-field>
         </div>
-        <div class="flex grid-cols-2 space-x-4">
-          <mat-form-field appearance="fill" class="w-full">
+        <div>
+          <mat-form-field appearance="fill">
             <mat-label>
               Email
             </mat-label>
             <input matInput required formControlName="email" />
           </mat-form-field>
-          <mat-form-field appearance="fill" class="w-full">
+          <mat-form-field appearance="fill">
             <mat-label>
               Contraseña
             </mat-label>
@@ -44,14 +44,14 @@
             </button>
           </mat-form-field>
         </div>
-        <div class="flex grid-cols-3 space-x-4">
-          <mat-form-field appearance="fill" class="w-full">
+        <div>
+          <mat-form-field appearance="fill">
             <mat-label>
               DNI o carné de identidad
             </mat-label>
             <input matInput required formControlName="id" />
           </mat-form-field>
-          <mat-form-field appearance="fill" class="w-full">
+          <mat-form-field appearance="fill">
             <mat-label>
               Fecha de nacimiento
             </mat-label>
@@ -72,17 +72,17 @@
             </mat-radio-group>
           </div>
         </div>
-        <div class="flex md:grid-cols-3 space-x-4">
-          <mat-form-field appearance="fill" class="w-full">
+        <div>
+          <mat-form-field appearance="fill">
             <mat-label>Número de contacto</mat-label>
             <input matInput required formControlName="phone" />
           </mat-form-field>
 
         </div>
-        <div class="grid md:grid-rows-2 place-items-center">
+        <div>
           <mat-checkbox>
             He leído y estoy de acuerdo con las
-            <a class="text-secondary" href="#" target=”_blank”>
+            <a href="#" target=”_blank”>
               Políticas de privacidad
             </a>
           </mat-checkbox>
@@ -91,10 +91,10 @@
           Registro
         </button>
       </form>
-      <div class="grid place-items-center">
+      <div>
         <p>
           Volver a
-          <a class="hover:cursor-pointer text-secondary" [routerLink]="['/login']">
+          <a [routerLink]="['/login']">
             Inicio de sesión
           </a>
         </p>
