@@ -14,20 +14,20 @@
                 <mat-label>
                     Correo
                 </mat-label>
-                <input matInput>
+                <input matInput [(ngModel)]="correo" name="correo">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>
                     Contraseña
                 </mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'">
+                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="contrasena" name="contrasena">
                 <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
             </mat-form-field>
-            <button mat-raised-button color="primary" [routerLink]="['/recipes']">
-                Inicio de sesión
-            </button>
+          <button mat-raised-button color="primary" (click)="iniciarSesion()">
+            Inicio de sesión
+          </button>
           <div class="grid place-items-center space-y-4">
             <button mat-raised-button color="warn" type="submit">
               Continuar con Google
@@ -52,3 +52,4 @@
         </form>
     </div>
 </main>
+

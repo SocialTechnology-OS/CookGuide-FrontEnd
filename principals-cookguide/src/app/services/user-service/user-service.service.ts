@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { User } from '../../models/user.model';
-import {Subject} from "rxjs";
-import { tap } from "rxjs/operators";
+import {map, tap} from "rxjs/operators";
+import { Subject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +36,15 @@ export class UserServiceService {
           this.onUserChangedSubject();
     }))
   }
+    verifyCredentials(email: string, password: string) {
+        return this.getUserList().pipe(
+            map((users: User[]) => {
+                // Verifica si el usuario y la contraseña coinciden con algún usuario en la lista
+                const validUser = users.find(user => user.email === email && user.password === password);
+                return !!validUser; // Devuelve true si se encuentra un usuario válido
+            })
+        );
+    }
 
 
 }
