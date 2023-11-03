@@ -1,0 +1,24 @@
+<div>
+    <div class="recipe-details" *ngIf="recipe">
+        <div class="recipe-tittle">
+            <h2>{{ recipe.name }}</h2>
+            <mat-icon>more_vert</mat-icon>
+        </div>
+        <h3> Autor: {{getAuthorFullName(recipe.author)}}  </h3>
+        <div class="recipe-content">
+          <div>
+            <img class="recipe-img" mat-card-image [src]="recipe.image" loading="lazy" />
+            <p>Tiempo de preparacion: {{ recipe.time }}</p>
+            <p>Porciones: {{ recipe.servings }} personas</p>
+          </div>
+          <div class="recipe-extension">
+            <b>Ingredientes:</b>
+            <ul>
+              <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+            </ul>
+            <br>
+            <b>Preparacion:</b> <br> <p>{{ recipe.preparation }}</p>
+          </div>
+        </div>
+    </div>
+</div>
