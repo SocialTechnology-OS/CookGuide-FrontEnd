@@ -1,55 +1,31 @@
 <main class="login">
-    <div class="w-full max-w-xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <form
-                class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col space-y-6"
-                (ngSubmit)="onSubmit()"
-                #loginForm="ngForm">
-            <div class="grid place-items-center space-y-4">
-                <a [routerLink]="['/login']"><img class="h-8" src="https://media.discordapp.net/attachments/1150112902737580138/1157540063660490804/WhatsApp_Image_2023-09-29_at_11.38.38_PM.jpeg?ex=6518fab1&is=6517a931&hm=ac44abfe2ab1ea45beb69daf8a017dae3b360fe9f6f02fb6850b148a18795321&=&width=627&height=662" alt="CookGuide Logo"></a>
-                <h1 class="text-black font-medium text-3xl">
-                    Inicio de sesión
-                </h1>  
+    <div class="login-container">
+        <form class="login-form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <div class="login-header">
+                <a href="/login"> <!-- Removed [routerLink] for the plain HTML example -->
+                    <img class="logo" src="https://media.discordapp.net/attachments/1150112902737580138/1157540063660490804/WhatsApp_Image_2023-09-29_at_11.38.38_PM.jpeg?ex=6518fab1&is=6517a931&hm=ac44abfe2ab1ea45beb69daf8a017dae3b360fe9f6f02fb6850b148a18795321&=&width=627&height=662" alt="CookGuide Logo">
+                </a>
             </div> 
-            <mat-form-field appearance="fill" class="w-full">
-                <mat-label>
-                    Correo
-                </mat-label>
-                <input matInput [(ngModel)]="correo" name="correo">
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>
-                    Contraseña
-                </mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="contrasena" name="contrasena">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-            </mat-form-field>
-          <button mat-raised-button color="primary" (click)="iniciarSesion()">
-            Inicio de sesión
-          </button>
-          <div class="grid place-items-center space-y-4">
-            <button mat-raised-button color="warn" type="submit">
-              Continuar con Google
-            </button>
-            <button mat-raised-button color="primary" type="submit">
-              Continuar con Facebook
-            </button>
-          </div>
-            <div class="grid place-items-center">
-                <p class="text-secondary">
-                    <a class="hover:cursor-pointer" href="#">
-                        ¿Olvidaste tu contraseña?
-                    </a>
-                </p>
-                <p>
+            <div class="input-container">
+                <input id="correo" type="email" name="correo" placeholder="Usuario"> <!-- Added type="email" for semantic purposes -->
+            </div>
+            <div class="input-container">
+                <input id="contrasena" type="password" name="contrasena" placeholder="Contraseña">
+                <!-- Password visibility toggle feature requires JavaScript, not included here -->
+            </div>
+            <button class="login-btn" type="submit">Ingresar</button>
+            <p class="o">o</p>
+            <div class="social-buttons">
+                <button class="google-btn" type="button">Continuar con Google</button>
+                <button class="facebook-btn" type="button">Continuar con Facebook</button>
+            </div>
+            <div class="login-footer">
+                <a class="forgot-password" href="#">¿Olvidaste tu contraseña?</a>
+                <p class="sign-up">
                     ¿No tienes cuenta?
-                    <a class="hover:cursor-pointer text-secondary" [routerLink]="['/register']">
-                        Registro
-                    </a>
+                    <a href="/register">Registro</a> <!-- Removed [routerLink] for the plain HTML example -->
                 </p>
             </div>
         </form>
     </div>
 </main>
-

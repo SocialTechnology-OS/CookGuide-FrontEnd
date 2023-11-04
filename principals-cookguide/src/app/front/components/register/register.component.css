@@ -1,10 +1,11 @@
 .register {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #f8f8f8; 
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #e06b43, #e97b44, #f28b45, #f99b47, #ffac4a);
   }
-  
+
   .register form {
     max-width: 500px;
     width: 90%;
