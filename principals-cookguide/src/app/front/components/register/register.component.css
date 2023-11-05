@@ -1,138 +1,69 @@
+/* Assuming 'styles.css' includes the following styles */
 .register {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(to bottom, #e06b43, #e97b44, #f28b45, #f99b47, #ffac4a);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Added padding as requested */
+  min-height: calc(100vh - 40px); /* Adjusted for padding */
+  background-image: linear-gradient(to bottom, #e06b43, #e97b44, #f28b45, #f99b47, #ffac4a);
+}
 
-  .register form {
-    max-width: 500px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .register h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333; 
-  }
-  
-  .register img {
-    display: block;
-    margin: 0 auto;
-    max-width: 150px;
-    margin-bottom: 20px;
-  }
-  
-  .register .flex {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .register .grid-cols-2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  
-  .register .md\:grid-cols-3 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  
-  .register .mat-form-field {
-    width: 100%;
-  }
-  
-  .register .text-secondary {
-    color: #4285f4;
-  }
-  
-  .register button {
-    width: 100%;
-    margin: 20px 0;
-  }
-  
-  .register .mat-checkbox {
-    text-align: left;
-    margin-top: 20px;
-  }
-  
-  .register .mat-checkbox a {
-    text-decoration: none;
-    color: #4285f4; 
-  }
-  
-  .register .mat-checkbox a:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  .register p {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  
-  @media (max-width: 600px) {
-    .register form {
-      width: 90%;
-    }
-  }
-  
-  /* Estilos para el formulario de edición de recetas */
-  
-  .form-container {
-    max-width: 500px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  mat-dialog-content {
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  mat-form-field {
-    width: 100%; /* Para ocupar el ancho completo del formulario */
-    margin-bottom: 15px;
-  }
-  
-  mat-label {
-    color: #333;
-  }
-  
-  .mat-icon {
-    color: #555;
-  }
-  
-  button {
-    margin-top: 10px;
-    margin-right: 10px;
-  }
-  
-  /* Estilos para hacerlo responsive */
-  @media screen and (max-width: 600px) {
-    .form-container {
-      width: 100%;
-    }
-  }
+.register h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #E06B43; 
+  font-weight: bold;
+}
+
+.register form {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spacing between form elements */
+}
+
+.register label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.register input[type="text"],
+.register input[type="email"],
+.register input[type="password"],
+.register input[type="date"],
+.register input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.register input[type="radio"] {
+  margin-right: 10px;
+}
+
+.register button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.register a {
+  color: #4285f4;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}

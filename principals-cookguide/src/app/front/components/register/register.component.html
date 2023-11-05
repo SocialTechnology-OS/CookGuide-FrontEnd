@@ -1,104 +1,56 @@
+
 <main class="register">
   <div>
-    <div>
       <div>
-        <a [routerLink]="['/register']"><img class="" src="https://media.discordapp.net/attachments/1150112902737580138/1157540063660490804/WhatsApp_Image_2023-09-29_at_11.38.38_PM.jpeg?ex=6518fab1&is=6517a931&hm=ac44abfe2ab1ea45beb69daf8a017dae3b360fe9f6f02fb6850b148a18795321&=&width=627&height=662" alt="Cookguide Logo"></a>
-        <h1>
-          Registro
-        </h1>
-      </div>
-      <form class=""
-            [formGroup]="form1">
-        <mat-tab-group (selectedTabChange)="onTabChange($event)">
-          <mat-tab label="Soy Estudiante"></mat-tab>
-          <mat-tab label="Soy Chef"></mat-tab>
-        </mat-tab-group>
-        <div class="">
-          <mat-form-field appearance="fill">
-            <mat-label>
-              Nombre
-            </mat-label>
-            <input matInput required formControlName="name" />
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>
-              Apellido
-            </mat-label>
-            <input matInput required formControlName="lastname" />
-          </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field appearance="fill">
-            <mat-label>
-              Email
-            </mat-label>
-            <input matInput required formControlName="email" />
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>
-              Contraseña
-            </mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" required formControlName="password" />
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field appearance="fill">
-            <mat-label>
-              DNI o carné de identidad
-            </mat-label>
-            <input matInput required formControlName="id" />
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>
-              Fecha de nacimiento
-            </mat-label>
-            <input matInput [matDatepicker]="picker" required formControlName="birthday" />
-            <mat-hint>
-              MM/DD/AAAA
-            </mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+          <form>
+              <div>
+                  <h1>Registrarse</h1>
+              </div>
+              <div>
+                  <input type="text" required placeholder="Nombre"/>
+              </div>
+              <div>
+                  <input type="text" required placeholder="Apellido" />
+              </div>
+              <div>
+                  <input type="email" required placeholder="Email" />
+              </div>
+              <div>
+                  <input type="password" required placeholder="Contraseña" />
+              </div>
+              <div>
+                  <input type="text" required placeholder="Dni" />
+              </div>
+              <div>
+                  <label>Fecha de nacimiento</label>
+                  <input type="date" required />
+              </div>
+              <div>
+                  <label>Sexo</label>
+                  <label><input type="radio" name="gender" value="masculino" required>Masculino</label>
+                  <label><input type="radio" name="gender" value="femenino" required>Femenino</label>
+              </div>
+              <div>
+                  <label>Número de contacto</label>
+                  <input type="tel" required />
+              </div>
+              <div>
+                  <label>
+                      <input type="checkbox" required>
+                      He leído y estoy de acuerdo con las
+                      <a href="#" target="_blank">Políticas de privacidad</a>
+                  </label>
+              </div>
+              <div>
+                  <button type="submit">Registro</button>
+              </div>
+          </form>
           <div>
-            <mat-label>
-              Sexo
-            </mat-label>
-            <mat-radio-group (change)="setSelectedGender($event.value)">
-              <mat-radio-button value="masculino">Masculino</mat-radio-button>
-              <mat-radio-button value="femenino">Femenino</mat-radio-button>
-            </mat-radio-group>
+              <p>
+                  Volver a
+                  <a href="/login">Inicio de sesión</a>
+              </p>
           </div>
-        </div>
-        <div>
-          <mat-form-field appearance="fill">
-            <mat-label>Número de contacto</mat-label>
-            <input matInput required formControlName="phone" />
-          </mat-form-field>
-
-        </div>
-        <div>
-          <mat-checkbox>
-            He leído y estoy de acuerdo con las
-            <a href="#" target=”_blank”>
-              Políticas de privacidad
-            </a>
-          </mat-checkbox>
-        </div>
-        <button mat-raised-button color="primary" (click)="createUser()">
-          Registro
-        </button>
-      </form>
-      <div>
-        <p>
-          Volver a
-          <a [routerLink]="['/login']">
-            Inicio de sesión
-          </a>
-        </p>
       </div>
-    </div>
   </div>
 </main>
