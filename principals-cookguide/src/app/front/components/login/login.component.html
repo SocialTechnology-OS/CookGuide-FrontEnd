@@ -5,15 +5,15 @@
                 <a href="/login"> <!-- Removed [routerLink] for the plain HTML example -->
                     <img class="logo" src="https://media.discordapp.net/attachments/1150112902737580138/1157540063660490804/WhatsApp_Image_2023-09-29_at_11.38.38_PM.jpeg?ex=6518fab1&is=6517a931&hm=ac44abfe2ab1ea45beb69daf8a017dae3b360fe9f6f02fb6850b148a18795321&=&width=627&height=662" alt="CookGuide Logo">
                 </a>
-            </div> 
-            <div class="input-container">
-                <input id="correo" type="email" name="correo" placeholder="Usuario"> <!-- Added type="email" for semantic purposes -->
             </div>
             <div class="input-container">
-                <input id="contrasena" type="password" name="contrasena" placeholder="Contraseña">
-                <!-- Password visibility toggle feature requires JavaScript, not included here -->
+                <input id="correo" type="email" name="correo" placeholder="Usuario" [(ngModel)]="correo"> <!-- Added type="email" for semantic purposes -->
             </div>
-            <button class="login-btn" type="submit">Ingresar</button>
+            <div class="input-container">
+                <input id="contrasena" type="password" name="contrasena" placeholder="Contraseña" [(ngModel)]="contrasena">
+
+            </div>
+            <button class="login-btn" (click)="iniciarSesion()">Ingresar</button>
             <p class="o">o</p>
             <div class="social-buttons">
                 <button class="google-btn" type="button">Continuar con Google</button>

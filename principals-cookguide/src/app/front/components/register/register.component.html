@@ -2,7 +2,11 @@
 <main class="register">
   <div>
       <div>
-          <form>
+          <form [formGroup]="form1">
+              <mat-tab-group (selectedTabChange)="onTabChange($event)">
+              <mat-tab label="Soy Estudiante"></mat-tab>
+              <mat-tab label="Soy Chef"></mat-tab>
+              </mat-tab-group>
               <div>
                   <h1>Registrarse</h1>
               </div>
