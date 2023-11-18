@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FrontCardsComponent } from './front/components/front-cards/front-cards.component';
-import { ManageRecipesComponent } from './front/components/manage-recipes/manage-recipes.component';
-import { RecipesDetailsComponent } from './front/components/recipes-details/recipes-details.component';
-import { LoginComponent } from "./front/components/login/login.component";
-import { RegisterComponent } from "./front/components/register/register.component";
+import { FrontCardsComponent } from './front/pages/front-cards/front-cards.component';
+import { ManageRecipesComponent } from './front/pages/manage-recipes/manage-recipes.component';
+import { RecipesDetailsComponent } from './front/pages/recipes-details/recipes-details.component';
+import { LoginComponent } from "./front/pages/login/login.component";
+import { RegisterComponent } from "./front/pages/register/register.component";
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},

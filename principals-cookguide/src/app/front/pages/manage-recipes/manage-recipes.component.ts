@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RecipeService } from 'src/app/services/recipe-service/recipe.service';
-import { recipeCard } from 'src/app/models/card.model';
+import { RecipeService } from 'src/app/front/services/recipe/recipe.service';
+import { recipeCard } from 'src/app/shared/models/recipe/recipe.model';
 import { MatDialog } from '@angular/material/dialog';
-import { FormCreateRecipesComponent } from '../form-create-recipes/form-create-recipes.component';
-import { FromUpdateRecipesComponent } from '../from-update-recipes/from-update-recipes.component';
+import { FormCreateRecipesComponent } from '../../components/form-create-recipes/form-create-recipes.component';
+import { FromUpdateRecipesComponent } from '../../components/from-update-recipes/from-update-recipes.component';
 
 @Component({
   selector: 'app-manage-recipes',

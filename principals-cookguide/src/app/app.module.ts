@@ -28,12 +28,12 @@ import { MatTableModule } from "@angular/material/table";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '../shared/material.module';
+import { MaterialModule } from './shared/module/material.module';
 import { RouterModule } from '@angular/router';
-import { FrontCardsComponent } from './front/components/front-cards/front-cards.component';
+import { FrontCardsComponent } from './front/pages/front-cards/front-cards.component';
 import { HttpClientModule} from '@angular/common/http';
 
-import { ManageRecipesComponent } from './front/components/manage-recipes/manage-recipes.component';
+import { ManageRecipesComponent } from './front/pages/manage-recipes/manage-recipes.component';
 import { FormCreateRecipesComponent } from './front/components/form-create-recipes/form-create-recipes.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -41,9 +41,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SidenavComponent } from './public/components/sidenav/sidenav.component';
 import { BodyComponent } from './public/components/body/body.component';
 import { FromUpdateRecipesComponent } from './front/components/from-update-recipes/from-update-recipes.component';
-import { RecipesDetailsComponent } from './front/components/recipes-details/recipes-details.component';
-import { LoginComponent } from './front/components/login/login.component';
-import { RegisterComponent } from './front/components/register/register.component';
+import { RecipesDetailsComponent } from './front/pages/recipes-details/recipes-details.component';
+import { LoginComponent } from './front/pages/login/login.component';
+import { RegisterComponent } from './front/pages/register/register.component';
 
 
 

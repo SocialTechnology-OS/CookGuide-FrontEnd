@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import { UserServiceService } from "../../../services/user-service/user-service.service";
+import { UserServiceService } from "../../services/user/user-service.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatTabChangeEvent } from "@angular/material/tabs";
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-import { recipeCard } from '../models/card.model';
+import { environment } from '../../../../environments/environment';
+import { recipeCard } from '../../../shared/models/recipe/recipe.model';
 import { tap } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
@@ -20,29 +20,30 @@ export class RecipeService {
      this.recipeChangedSubject.next();
    }
    recipeChanged$ = this.recipeChangedSubject.asObservable();
- 
+
 
   getRecipesList() {
     return this.http
       .get<recipeCard[]>(`${environment.baseURL}/recipes`)
   }
-  
-  getRecipe(authorId: string) {
+
+
+  getRecipeById(id: number) {
     return this.http
-      .get<recipeCard>(`${environment.baseURL}/recipes/${authorId}`)
+      .get<recipeCard>(`${environment.baseURL}/recipes/${id}`)
   }
 
   createRecipe(recipe: recipeCard) {
     return this.http
       .post(`${environment.baseURL}/recipes`, recipe).pipe(tap(() => {
-        this.onRecipeChanged(); 
+        this.onRecipeChanged();
       }))
   }
 
   updateRecipe(recipe: recipeCard) {
     return this.http
       .put(`${environment.baseURL}/recipes/${recipe.id}`, recipe).pipe(tap(() => {
-        this.onRecipeChanged(); 
+        this.onRecipeChanged();
       }))
   }
 
@@ -50,5 +51,5 @@ export class RecipeService {
     return this.http
       .delete(`${environment.baseURL}/recipes/${id}`)
   }
-      
+
 }

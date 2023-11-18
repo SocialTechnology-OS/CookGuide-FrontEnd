@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RecipeService } from 'src/app/services/recipe-service/recipe.service';
-import { recipeCard } from 'src/app/models/card.model';
+import { RecipeService } from 'src/app/front/services/recipe/recipe.service';
+import { recipeCard } from 'src/app/shared/models/recipe/recipe.model';
 import { Router } from '@angular/router';
 
 @Component({

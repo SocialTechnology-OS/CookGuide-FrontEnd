@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserServiceService } from "../../../services/user-service/user-service.service";
+import { UserServiceService } from "../../services/user/user-service.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
 

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { recipeCard } from 'src/app/models/card.model';
-import { RecipeService } from 'src/app/services/recipe-service/recipe.service';
-import { UserServiceService } from 'src/app/services/user-service/user-service.service';
-import { User } from 'src/app/models/user.model';
+import { recipeCard } from 'src/app/shared/models/recipe/recipe.model';
+import { RecipeService } from 'src/app/front/services/recipe/recipe.service';
+import { UserServiceService } from 'src/app/front/services/user/user-service.service';
+import { User } from 'src/app/shared/models/user/user.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -24,7 +24,7 @@ export class RecipesDetailsComponent{
   }
 
   ngOnInit(): void {
-    this.getListUsers() 
+    this.getListUsers()
     this.route.params.subscribe(params => {
       const recipeId = params['id'];
       this.recipeService.getRecipeById(recipeId).subscribe(response => {
@@ -38,7 +38,7 @@ export class RecipesDetailsComponent{
     if (author) {
       return `${author.name} ${author.lastname}`;
     }
-    return 'Autor Desconocido'; 
+    return 'Autor Desconocido';
   }
 
 }

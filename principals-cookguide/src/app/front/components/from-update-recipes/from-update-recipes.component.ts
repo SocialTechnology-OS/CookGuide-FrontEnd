@@ -2,8 +2,8 @@ import { Component, Inject } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { recipeCard } from 'src/app/models/card.model';
-import { RecipeService } from 'src/app/services/recipe-service/recipe.service';
+import { recipeCard } from 'src/app/shared/models/recipe/recipe.model';
+import { RecipeService } from 'src/app/front/services/recipe/recipe.service';
 
 @Component({
   selector: 'app-from-update-recipes',
