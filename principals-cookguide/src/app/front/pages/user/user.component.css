@@ -1,11 +1,7 @@
 .user-profile {
-  max-width: 600px;
-  margin: auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
+  background-image: linear-gradient(to bottom, #e06b43, #e97b44, #f28b45, #f99b47, #ffac4a);
 }
 
 .profile-header {
@@ -13,8 +9,8 @@
 }
 
 .profile-picture {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: 3px solid #333;
 }
@@ -24,12 +20,15 @@
 }
 
 .profile-details h3 {
-  color: #333;
+  color: #FC4E4E;
   border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
+  font-weight: bold;
 }
-
+.submenu-profile{
+  color: white;
+}
 .profile-details p {
   margin: 5px 0;
-  color: #666;
+  color: black;
 }

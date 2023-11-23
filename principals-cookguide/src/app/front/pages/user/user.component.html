@@ -8,20 +8,20 @@
 
     <div class="profile-details">
       <h3>Detalles de Contacto</h3>
-      <p><strong>Email:</strong> {{ user.email }}</p>
-      <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+      <p><strong class="submenu-profile">Email:</strong> {{ user.email }}</p>
+      <p><strong class="submenu-profile">Teléfono:</strong> {{ user.phone }}</p>
 
       <h3>Información Personal</h3>
-      <p><strong>Cumpleaños:</strong> {{ user.birthday | date }}</p>
-      <p><strong>Género:</strong> {{ user.gender }}</p>
-      <p><strong>Altura:</strong> {{ user.height }} m</p>
-      <p><strong>Peso:</strong> {{ user.weight }} kg</p>
+      <p><strong class="submenu-profile">Cumpleaños:</strong> {{ user.birthday | date }}</p>
+      <p><strong class="submenu-profile">Género:</strong> {{ user.gender }}</p>
+      <p><strong class="submenu-profile">Altura:</strong> {{ user.height }} m</p>
+      <p><strong class="submenu-profile">Peso:</strong> {{ user.weight }} kg</p>
 
       <h3>Preferencias y Necesidades</h3>
-      <p><strong>Dieta:</strong> {{ user.diet }}</p>
-      <p><strong>Alergias:</strong> {{ user.allergies.join(', ') }}</p>
-      <p><strong>Preferencias Alimenticias:</strong> {{ user.preferences.join(', ') }}</p>
-      <p><strong>Necesidades Alimenticias:</strong> {{ user.needs.join(', ') }}</p>
+      <p><strong class="submenu-profile">Dieta:</strong> {{ user.diet }}</p>
+      <p><strong class="submenu-profile">Alergias:</strong> {{ user.allergies.join(', ') }}</p>
+      <p><strong class="submenu-profile">Preferencias Alimenticias:</strong> {{ user.preferences.join(', ') }}</p>
+      <p><strong class="submenu-profile">Necesidades Alimenticias:</strong> {{ user.needs.join(', ') }}</p>
     </div>
   </div>
 </div>
