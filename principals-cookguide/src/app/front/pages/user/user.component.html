@@ -1,0 +1,27 @@
+<div class="user-page">
+  <div class="user-profile">
+    <div class="profile-header">
+      <img src="{{ user.picture }}" alt="Foto de perfil" class="profile-picture">
+      <h1>{{ user.name }} {{ user.lastname }}</h1>
+      <h2>{{ user.type | uppercase }}</h2>
+    </div>
+
+    <div class="profile-details">
+      <h3>Detalles de Contacto</h3>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+
+      <h3>Información Personal</h3>
+      <p><strong>Cumpleaños:</strong> {{ user.birthday | date }}</p>
+      <p><strong>Género:</strong> {{ user.gender }}</p>
+      <p><strong>Altura:</strong> {{ user.height }} m</p>
+      <p><strong>Peso:</strong> {{ user.weight }} kg</p>
+
+      <h3>Preferencias y Necesidades</h3>
+      <p><strong>Dieta:</strong> {{ user.diet }}</p>
+      <p><strong>Alergias:</strong> {{ user.allergies.join(', ') }}</p>
+      <p><strong>Preferencias Alimenticias:</strong> {{ user.preferences.join(', ') }}</p>
+      <p><strong>Necesidades Alimenticias:</strong> {{ user.needs.join(', ') }}</p>
+    </div>
+  </div>
+</div>

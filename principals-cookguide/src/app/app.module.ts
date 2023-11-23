@@ -44,6 +44,7 @@ import { FromUpdateRecipesComponent } from './front/components/from-update-recip
 import { RecipesDetailsComponent } from './front/pages/recipes-details/recipes-details.component';
 import { LoginComponent } from './front/pages/login/login.component';
 import { RegisterComponent } from './front/pages/register/register.component';
+import { UserComponent } from './front/pages/user/user.component';
 
 
 
@@ -60,6 +61,7 @@ import { RegisterComponent } from './front/pages/register/register.component';
     RecipesDetailsComponent,
     LoginComponent,
     RegisterComponent,
+    UserComponent,
 
 
   ],

@@ -306,7 +306,7 @@
       "password": "pass4321",
       "name": "Robert",
       "lastname": "Brown",
-      "picture": "user5.jpg",
+      "picture": "https://media.discordapp.net/attachments/1150112902737580137/1177135062895046726/ecded678-5b5c-48c3-9be8-8ffe24013f27.png?ex=65716775&is=655ef275&hm=5c07f41a588403e2b6cedadd6bd99675e858d13038a8119631e9e9995bbad6e3&=&format=webp&width=480&height=640",
       "phone": "555-1357",
       "birthday": "1982-09-05",
       "gender": "Masculino",

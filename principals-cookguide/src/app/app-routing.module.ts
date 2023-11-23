@@ -5,13 +5,14 @@ import { ManageRecipesComponent } from './front/pages/manage-recipes/manage-reci
 import { RecipesDetailsComponent } from './front/pages/recipes-details/recipes-details.component';
 import { LoginComponent } from "./front/pages/login/login.component";
 import { RegisterComponent } from "./front/pages/register/register.component";
-
+import { UserComponent } from "./front/pages/user/user.component";
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'recipes', component: FrontCardsComponent},
   {path:'my-recipes', component: ManageRecipesComponent},
   {path:'recipes/:id', component: RecipesDetailsComponent},
   {path:'register', component: RegisterComponent},
+  {path:'user-page', component: UserComponent},
   {path:'', pathMatch: 'full', redirectTo: '/login'},
   {path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];
