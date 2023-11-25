@@ -6,13 +6,15 @@ import { RecipesDetailsComponent } from './front/pages/recipes-details/recipes-d
 import { LoginComponent } from "./front/pages/login/login.component";
 import { RegisterComponent } from "./front/pages/register/register.component";
 import { UserComponent } from "./front/pages/user/user.component";
+import { AuthGuard } from './shared/models/guard/AuthGuard';
+
 const routes: Routes = [
   {path:'login', component: LoginComponent},
-  {path:'recipes', component: FrontCardsComponent},
-  {path:'my-recipes', component: ManageRecipesComponent},
-  {path:'recipes/:id', component: RecipesDetailsComponent},
+  {path:'recipes', component: FrontCardsComponent, canActivate: [AuthGuard]},
+  {path:'my-recipes', component: ManageRecipesComponent, canActivate: [AuthGuard]},
+  {path:'recipes/:id', component: RecipesDetailsComponent, canActivate: [AuthGuard]},
   {path:'register', component: RegisterComponent},
-  {path:'user-page', component: UserComponent},
+  {path:'user-page', component: UserComponent, canActivate: [AuthGuard]},
   {path:'', pathMatch: 'full', redirectTo: '/login'},
   {path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];

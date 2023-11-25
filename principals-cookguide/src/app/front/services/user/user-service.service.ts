@@ -4,14 +4,16 @@ import { environment } from '../../../../environments/environment';
 import { Account } from '../../../shared/models/account/account.model';
 import {map, tap} from "rxjs/operators";
 import {Observable, Subject} from "rxjs";
+import {Router} from "@angular/router";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserServiceService {
-  Users: Account[] = [];
 
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   private userChangedSubject = new Subject<void>();
 
@@ -59,6 +61,7 @@ export class UserServiceService {
 
   logout() {
     localStorage.removeItem('userId');
-    this.onUserChangedSubject();
+    this.userChangedSubject.next(); // Aquí es donde se emite el evento
+    this.router.navigate(['/login']);
   }
 }

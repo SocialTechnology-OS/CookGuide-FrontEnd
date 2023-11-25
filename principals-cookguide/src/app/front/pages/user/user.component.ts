@@ -47,6 +47,10 @@ export class UserComponent {
   }
 
 
+  logout(): void {
+    this.userService.logout();
+    this.router.navigate(['/login']);
+  }
 
 
 

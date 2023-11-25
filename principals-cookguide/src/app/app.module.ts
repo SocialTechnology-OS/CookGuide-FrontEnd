@@ -46,7 +46,7 @@ import { LoginComponent } from './front/pages/login/login.component';
 import { RegisterComponent } from './front/pages/register/register.component';
 import { UserComponent } from './front/pages/user/user.component';
 
-
+import { AuthGuard } from './shared/models/guard/AuthGuard';
 
 
 @NgModule({
@@ -97,7 +97,7 @@ import { UserComponent } from './front/pages/user/user.component';
     MatToolbarModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
