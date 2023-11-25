@@ -4,12 +4,14 @@
             <h2>{{ recipe.name }}</h2>
             <mat-icon>more_vert</mat-icon>
         </div>
-        <h3> Autor: {{getUserNameById(recipe.authorId) + " " + recipe.authorId }}  </h3>
+        <div *ngIf="authorDetails" class="recipe-author">
+          <h3><b>Autor:</b> {{ authorDetails?.firstName }} {{ authorDetails?.lastName }}</h3>
+        </div>
         <div class="recipe-content">
           <div>
             <img class="recipe-img" mat-card-image [src]="recipe.image" loading="lazy" />
-            <p>Tiempo de preparacion: {{ recipe.time }}</p>
-            <p>Porciones: {{ recipe.servings }} personas</p>
+            <p><b>Tiempo de preparacion:</b> {{ recipe.time }} minutos</p>
+            <p><b>Porciones:</b> {{ recipe.servings }} personas</p>
           </div>
           <div class="recipe-extension">
             <b>Ingredientes:</b>
@@ -19,6 +21,17 @@
             <br>
             <b>Preparacion:</b> <br> <p>{{ recipe.preparation }}</p>
           </div>
+        </div>
+        <div class="actions">
+          <button mat-raised-button color="primary" (click)="goBack()">
+            <mat-icon>arrow_back</mat-icon>
+            Regresar
+          </button>
+
+          <button mat-raised-button color="accent" (click)="placeOrder()">
+            <mat-icon>shopping_cart</mat-icon>
+            Realizar Pedido
+          </button>
         </div>
     </div>
 </div>

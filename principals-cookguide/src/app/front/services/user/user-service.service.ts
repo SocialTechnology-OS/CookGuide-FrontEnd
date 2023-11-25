@@ -64,4 +64,8 @@ export class UserServiceService {
     this.userChangedSubject.next(); // Aquí es donde se emite el evento
     this.router.navigate(['/login']);
   }
+
+  getAuthorByRecipeId(recipeId: number): Observable<any> {
+    return this.http.get(`${environment.baseURL}/recipes/${recipeId}/author`);
+  }
 }

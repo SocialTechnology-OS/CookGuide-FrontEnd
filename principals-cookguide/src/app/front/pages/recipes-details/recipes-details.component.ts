@@ -3,7 +3,8 @@ import { recipeCard } from 'src/app/shared/models/recipe/recipe.model';
 import { RecipeService } from 'src/app/front/services/recipe/recipe.service';
 import { UserServiceService } from 'src/app/front/services/user/user-service.service';
 import { Account } from 'src/app/shared/models/account/account.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-recipes-details',
@@ -14,8 +15,9 @@ export class RecipesDetailsComponent{
 
   recipe!: recipeCard;
   Users: Account[] = [];
+  authorDetails: any;
 
-  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private userService: UserServiceService) {}
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private userService: UserServiceService, private router: Router, public dialog: MatDialog) {}
 
   getListUsers() {
     this.userService.getUserList().subscribe((response:any) => {
@@ -28,7 +30,9 @@ export class RecipesDetailsComponent{
       const recipeId = params['id'];
       this.recipeService.getRecipeById(recipeId).subscribe((response: any) => {
         this.recipe = response.data;
-
+        this.userService.getAuthorByRecipeId(recipeId).subscribe((authorResponse: any) => {
+          this.authorDetails = authorResponse[0];
+        });
         // Asumiendo que this.recipe.ingredients es un array de strings
         if (this.recipe.ingredients && Array.isArray(this.recipe.ingredients)) {
           this.recipe.ingredients = this.recipe.ingredients.map(ingredient =>
@@ -36,13 +40,21 @@ export class RecipesDetailsComponent{
           );
         }
 
+
         console.log(this.recipe);
       });
     });
   }
 
-    getUserNameById(userId: number) {
+  goBack() {
+    this.router.navigate(['/recipes']);
+  }
 
-    }
+  placeOrder() {
+    alert('¡Tu pedido ya fue realizado!');
+  }
+
+
+
 
 }
