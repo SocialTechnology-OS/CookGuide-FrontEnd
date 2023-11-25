@@ -15,9 +15,9 @@ export class FrontCardsComponent {
   recipesCards: recipeCard[] = [];
 
   getlistrecipes() {
-    this.recipesService.getRecipesList().subscribe(response => {
-      console.log(response);
-      this.recipesCards = response;
+    this.recipesService.getRecipesList().subscribe((response: any) => {
+      console.log(response.data);
+      this.recipesCards = response.data;
     })
   }
 
@@ -26,6 +26,6 @@ export class FrontCardsComponent {
   }
 
   ViewDetails(recipe: recipeCard) {
-    this.router.navigate(['/recipes', recipe.id]);
+    this.router.navigate(['/recipes', recipe.uid]);
   }
 }

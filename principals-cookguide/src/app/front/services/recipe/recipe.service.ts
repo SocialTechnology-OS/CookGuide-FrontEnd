@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../environments/environment';
-import { recipeCard } from '../../../shared/models/recipe/recipe.model';
-import { tap } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../../environments/environment';
+import {recipeCard} from '../../../shared/models/recipe/recipe.model';
+import {tap} from 'rxjs/operators';
+import {Subject} from 'rxjs';
 
 
 @Injectable({
@@ -27,6 +27,16 @@ export class RecipeService {
       .get<recipeCard[]>(`${environment.baseURL}/recipes`)
   }
 
+  getRecipesListByAuthor(authorId:any) {
+    return this.http
+      .get<recipeCard[]>(`${environment.baseURL}/recipes/author/${authorId}`)
+  }
+
+  async getAuthorRecipe(id: number) {
+    // @ts-ignore
+    const response = await fetch(this.http.get<string>(`${environment.baseURL}/recipes/${id}/author`));
+    return await response.text();
+  }
 
   getRecipeById(id: number) {
     return this.http
@@ -42,7 +52,7 @@ export class RecipeService {
 
   updateRecipe(recipe: recipeCard) {
     return this.http
-      .put(`${environment.baseURL}/recipes/${recipe.id}`, recipe).pipe(tap(() => {
+      .put(`${environment.baseURL}/recipes/${recipe.uid}`, recipe).pipe(tap(() => {
         this.onRecipeChanged();
       }))
   }

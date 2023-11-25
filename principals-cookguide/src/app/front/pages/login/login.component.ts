@@ -13,27 +13,39 @@ export class LoginComponent {
   correo = ''; // Variable para almacenar el correo ingresado
   contrasena = ''; // Variable para almacenar la contraseña ingresada
   errorMensaje = '';
+
   constructor(
     private userService: UserServiceService,
     private snackBar: MatSnackBar,
     private router: Router
-  ) {}
+  ) {
+  }
+
+  NgOnInit(): void {
+    this.userService.getUserList();
+  }
+
   onSubmit() {
 
   }
+
   openSnackBar(message: string) {
-      this.snackBar.open(message, 'Cerrar', {
-          duration: 5000, // Duración del aviso en milisegundos (opcional)
+    this.snackBar.open(message, 'Cerrar', {
+      duration: 5000, // Duración del aviso en milisegundos (opcional)
+    });
+  }
+
+  onLogin() {
+    this.userService.login(this.correo, this.contrasena)
+      .subscribe(log => {
+        if (log) {
+          this.router.navigate(['/recipes']);
+          console.log('Inicio de sesión exitoso', log);
+        } else {
+          this.openSnackBar(this.errorMensaje);
+          console.log('Inicio de sesión fallido');
+        }
       });
   }
-  iniciarSesion() {
-        this.userService.verifyCredentials(this.correo, this.contrasena).subscribe((isValid: boolean) => {
-            if (isValid) {
-                this.router.navigate(['/recipes']); // Redirigir al usuario a "/recipes"
-            } else {
-                this.errorMensaje = 'Credenciales incorrectas';
-                this.openSnackBar(this.errorMensaje); // Mostrar mensaje de error
-            }
-        });
-  }
+
 }

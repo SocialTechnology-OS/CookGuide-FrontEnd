@@ -42,9 +42,9 @@ export class FromUpdateRecipesComponent {
       return;
     }
     this.recipeservice.updateRecipe({
-      id: this.data.id,
+      uid: this.data.uid,
       name: this.form.value.name,
-      author: this.data.author,
+      authorId: this.data.authorId,
       image: this.form.value.image,
       ingredients: this.form.value.ingredients.split(','),
       preparation: this.form.value.preparation,

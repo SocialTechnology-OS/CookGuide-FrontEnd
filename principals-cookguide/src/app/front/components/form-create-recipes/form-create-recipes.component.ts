@@ -35,14 +35,14 @@ export class FormCreateRecipesComponent {
   }
 
   createRecipe() {
-    console.log(this.form.value.ingredients);
+    console.log(this.form.value);
     this.recipeservice
       .createRecipe({
-        id: 0,
+        uid: 0,
         name: this.form.value.name,
-        author: '5',
+        authorId: '5',
         image: this.form.value.image,
-        ingredients: this.form.value.ingredients.split(','),
+        ingredients: this.form.value.ingredients,
         preparation: this.form.value.preparation,
         time: this.form.value.time,
         servings: this.form.value.servings,

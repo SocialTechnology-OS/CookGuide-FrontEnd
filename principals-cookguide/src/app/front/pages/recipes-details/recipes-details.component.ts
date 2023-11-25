@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { recipeCard } from 'src/app/shared/models/recipe/recipe.model';
 import { RecipeService } from 'src/app/front/services/recipe/recipe.service';
 import { UserServiceService } from 'src/app/front/services/user/user-service.service';
-import { User } from 'src/app/shared/models/user/user.model';
+import { Account } from 'src/app/shared/models/account/account.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,13 +13,13 @@ import { ActivatedRoute } from '@angular/router';
 export class RecipesDetailsComponent{
 
   recipe!: recipeCard;
-  Users: User[] = [];
+  Users: Account[] = [];
 
   constructor(private route: ActivatedRoute, private recipeService: RecipeService, private userService: UserServiceService) {}
 
   getListUsers() {
-    this.userService.getUserList().subscribe(response => {
-      this.Users = response;
+    this.userService.getUserList().subscribe((response:any) => {
+      this.Users = response.data;
     })
   }
 
@@ -27,18 +27,15 @@ export class RecipesDetailsComponent{
     this.getListUsers()
     this.route.params.subscribe(params => {
       const recipeId = params['id'];
-      this.recipeService.getRecipeById(recipeId).subscribe(response => {
-        this.recipe = response;
+      this.recipeService.getRecipeById(recipeId).subscribe((response:any) => {
+        this.recipe = response.data;
+        console.log(this.recipe);
       });
     });
   }
 
-  getAuthorFullName(authorId: any): string {
-    const author = this.Users.find(user => user.id.toString() === authorId.toString());
-    if (author) {
-      return `${author.name} ${author.lastname}`;
+    getUserNameById(userId: number) {
+
     }
-    return 'Autor Desconocido';
-  }
 
 }

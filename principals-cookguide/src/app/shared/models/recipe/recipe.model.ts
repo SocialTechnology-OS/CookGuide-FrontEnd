@@ -1,7 +1,7 @@
 export interface recipeCard{
-    id: any;
+    uid: any;
     name:any;
-    author:any;
+    authorId:any;
     image:any;
     ingredients:any;
     preparation:any;

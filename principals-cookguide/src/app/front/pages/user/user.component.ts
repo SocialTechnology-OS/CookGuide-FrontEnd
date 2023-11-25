@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserServiceService } from 'src/app/front/services/user/user-service.service'
-import { User } from 'src/app/shared/models/user/user.model';
+import { Account } from 'src/app/shared/models/account/account.model';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-user',
@@ -8,24 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-  user: User = {
+  user: Account = {
     id: '',
     type: '',
     email: '',
     user: '',
     password: '',
-    name: '',
+    firstname: '',
     lastname: '',
     picture: '',
     phone: '',
     birthday: '',
     gender: '',
     diet: '',
-    allergies: [],
-    preferences: [],
-    needs: [],
     height: '',
-    weight: ''
+    weight: '',
+    dni: '',
   };
   UserId: number = 5;
 
@@ -34,7 +32,7 @@ export class UserComponent {
   ngOnInit(): void {
     this.userService.getUserById(this.UserId).subscribe(
       (userData) => {
-        this.user = userData;
+        this.user = userData.data;
       },
       (error) => {
         console.error('Error al obtener el usuario', error);

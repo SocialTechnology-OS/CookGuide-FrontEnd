@@ -2,7 +2,7 @@
   <div class="user-profile">
     <div class="profile-header">
       <img src="{{ user.picture }}" alt="Foto de perfil" class="profile-picture">
-      <h1>{{ user.name }} {{ user.lastname }}</h1>
+      <h1>{{ user.firstname }} {{ user.lastname }}</h1>
       <h2>{{ user.type | uppercase }}</h2>
     </div>
 
@@ -19,9 +19,6 @@
 
       <h3>Preferencias y Necesidades</h3>
       <p><strong class="submenu-profile">Dieta:</strong> {{ user.diet }}</p>
-      <p><strong class="submenu-profile">Alergias:</strong> {{ user.allergies.join(', ') }}</p>
-      <p><strong class="submenu-profile">Preferencias Alimenticias:</strong> {{ user.preferences.join(', ') }}</p>
-      <p><strong class="submenu-profile">Necesidades Alimenticias:</strong> {{ user.needs.join(', ') }}</p>
     </div>
   </div>
 </div>

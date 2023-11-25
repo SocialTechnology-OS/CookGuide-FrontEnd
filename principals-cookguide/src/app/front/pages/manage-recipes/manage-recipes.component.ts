@@ -20,12 +20,11 @@ export class ManageRecipesComponent {
   recipesCards: recipeCard[] = [];
   authorId: string = '5';
 
-  getRecipesByAuthor(authorNumber: string) {
-    this.recipesService.getRecipesList().subscribe(
-      (recipes: recipeCard[]) => {
-        this.recipesCards = recipes.filter(recipe => recipe.author === authorNumber);
-      }
-    );
+  getRecipesByAuthor(authorNumber:any) {
+    this.recipesService.getRecipesListByAuthor(authorNumber).subscribe((response: any) => {
+      console.log(response.data);
+      this.recipesCards = response.data;
+    })
   }
 
   ngOnInit(): void {
