@@ -1,7 +1,13 @@
 .user-profile {
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  padding: 20px 40px;
   background-image: linear-gradient(to bottom, #e06b43, #e97b44, #f28b45, #f99b47, #ffac4a);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .profile-header {
@@ -9,14 +15,19 @@
 }
 
 .profile-picture {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   border: 3px solid #333;
 }
 
 .profile-details {
   margin-top: 20px;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
 }
 
 .profile-details h3 {
@@ -25,10 +36,29 @@
   padding-bottom: 5px;
   font-weight: bold;
 }
-.submenu-profile{
-  color: white;
+
+.submenu-profile {
+  color: #e06b43; /* Color para hacerlo coherente con el gradiente */
 }
+
 .profile-details p {
   margin: 5px 0;
   color: black;
 }
+
+/* Estilos para el botón de Cerrar Sesión */
+button {
+  background-color: #e06b43; /* Color que combina con el gradiente */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f28b45; /* Cambio de color al pasar el ratón */
+}
+

@@ -34,3 +34,18 @@
     justify-content: center;
     margin: 0px;
   }
+
+  .mat-mdc-raised-button.mat-unthemed {
+    background-color: #e06b43; /* Color que combina con el gradiente */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .mat-mdc-raised-button.mat-unthemed:hover {
+    background-color: #f28b45; /* Cambio de color al pasar el ratón */
+  }

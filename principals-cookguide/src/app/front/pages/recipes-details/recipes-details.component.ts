@@ -24,11 +24,18 @@ export class RecipesDetailsComponent{
   }
 
   ngOnInit(): void {
-    this.getListUsers()
     this.route.params.subscribe(params => {
       const recipeId = params['id'];
-      this.recipeService.getRecipeById(recipeId).subscribe((response:any) => {
+      this.recipeService.getRecipeById(recipeId).subscribe((response: any) => {
         this.recipe = response.data;
+
+        // Asumiendo que this.recipe.ingredients es un array de strings
+        if (this.recipe.ingredients && Array.isArray(this.recipe.ingredients)) {
+          this.recipe.ingredients = this.recipe.ingredients.map(ingredient =>
+            ingredient.replace(/, 0\.0,/, ',')
+          );
+        }
+
         console.log(this.recipe);
       });
     });
