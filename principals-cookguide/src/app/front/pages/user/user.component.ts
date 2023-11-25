@@ -25,19 +25,25 @@ export class UserComponent {
     weight: '',
     dni: '',
   };
-  UserId: number = 5;
 
   constructor(private userService: UserServiceService, private router: Router) {}
 
   ngOnInit(): void {
-    this.userService.getUserById(this.UserId).subscribe(
-      (userData) => {
-        this.user = userData.data;
-      },
-      (error) => {
-        console.error('Error al obtener el usuario', error);
-      }
-    );
+    const userId = this.userService.getUserId();
+    if (userId) {
+      this.userService.getUserById(userId).subscribe(
+        (userData) => {
+          this.user = userData.data;
+        },
+        (error) => {
+          console.error('Error al obtener el usuario', error);
+        }
+      );
+    } else {
+      console.error('No hay un usuario logueado.');
+
+      this.router.navigate(['/login']);
+    }
   }
 
 

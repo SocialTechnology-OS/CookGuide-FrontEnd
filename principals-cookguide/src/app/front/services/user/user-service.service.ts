@@ -41,10 +41,24 @@ export class UserServiceService {
   login(email: string, password: string): Observable<Account | undefined> {
     return this.getUserList().pipe(
       map((response: any) => response.data),
-      map((users: Account[]) =>
-        users.find(user => user.email === email && user.password === password)
-      )
+      map((users: Account[]) => {
+        const user = users.find(u => u.email === email && u.password === password);
+        if (user) {
+          localStorage.setItem('userId', user.id.toString());
+          this.onUserChangedSubject();
+        }
+        return user;
+      })
     );
   }
 
+  getUserId(): number | null {
+    const userId = localStorage.getItem('userId');
+    return userId ? Number(userId) : null;
+  }
+
+  logout() {
+    localStorage.removeItem('userId');
+    this.onUserChangedSubject();
+  }
 }
